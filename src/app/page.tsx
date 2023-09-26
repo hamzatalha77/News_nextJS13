@@ -1,10 +1,11 @@
 import Image from 'next/image'
-import Hero from '../../public/hero.png'
+import Hero from '../../public/team1.png'
+import styles from './page.module.css'
 export default function Home() {
   return (
     <div className="flex items-center gap-24">
       <div className="flex-1 flex flex-col gap-12">
-        <h1 className="text-[72px] title">
+        <h1 className={styles.title}>
           Global Chronicles: Bringing the World to You
         </h1>
         <p className="text-[24px] font-light">
@@ -16,7 +17,7 @@ export default function Home() {
         </button>
       </div>
       <div className="flex-1 flex flex-col gap-12">
-        <Image src={Hero} className="w-24 h-[500px] object-cover" alt="home" />
+        <Image src={Hero} className="object-cover" alt="home" />
       </div>
     </div>
   )
