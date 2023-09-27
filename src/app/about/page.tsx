@@ -17,10 +17,10 @@ const About = () => {
           <h2>You Gonna be Able to See the world.stay stunned </h2>
         </div>
       </div>
-      <div>
-        <div>
+      <div className="flex gap-24">
+        <div className="flex-1 mt-12 flex flex-col gap-8">
           <h1>Who I am ?</h1>
-          <p>
+          <p className="text-lg font-light text-justify">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
             tempora aut eos vitae amet tenetur eligendi aspernatur magnam ipsum
             impedit inventore obcaecati, facilis incidunt accusamus optio, natus
@@ -31,17 +31,19 @@ const About = () => {
             praesentium rerum! Reprehenderit, reiciendis debitis?
           </p>
         </div>
-        <div>
+        <div className="flex-1 mt-12 flex flex-col gap-8">
           <h1>What I do ?</h1>
-          <p>
+          <p className="text-lg font-light text-justify">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed, eius
             mollitia tempora, nihil obcaecati, ullam quis eum inventore error
             iusto quia ex. Veritatis quas facere perferendis, dolor eos delectus
             cum!
             <br />
+            <br /> -Lorem ipsum dolor sit
             <br />
-            -Lorem ipsum dolor sit -amet, consectetur adipisicing -elit.
-            Tempora, fugit.
+            <br /> -amet, consectetur adipisicing
+            <br />
+            <br /> -elit Tempora, fugit.
           </p>
           <Buttons url="/contact" text="Contact" />
         </div>
