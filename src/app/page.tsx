@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Hero from '../../public/team1.png'
 import styles from './page.module.css'
+import Buttons from '@/components/buttons/buttons'
 export default function Home() {
   return (
     <div className="flex items-center gap-24">
@@ -12,9 +13,7 @@ export default function Home() {
           Welcome to Penta News, your trusted source for timely and insightful
           news, delivering headlines that matter, when they matter.
         </p>
-        <button className="p-5 cursor-pointer bg-[#66FCF1] border-none rounded w-max text-white">
-          See My Work
-        </button>
+        <Buttons url="portfolio" text="See My Work" />
       </div>
       <div className="flex-1 flex flex-col gap-12">
         <Image src={Hero} className="object-cover" alt="home" />
