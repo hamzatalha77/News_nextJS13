@@ -1,10 +1,13 @@
 import Navbar from '@/components/navbar/Navbar'
 import './globals.css'
 import type { Metadata } from 'next'
-import { Inter, Dela_Gothic_One } from 'next/font/google'
+import { Dela_Gothic_One } from 'next/font/google'
 import Footer from '@/components/footer/Footer'
 
-const delaGothicOne = Dela_Gothic_One({ subsets: [''] })
+const delaGothicOne = Dela_Gothic_One({
+  subsets: ['vietnamese'],
+  weight: '400'
+})
 
 export const metadata: Metadata = {
   title: 'Penta News',
