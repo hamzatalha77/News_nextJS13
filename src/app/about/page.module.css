@@ -1,0 +1,4 @@
+.image_filter {
+  object-fit: cover;
+  filter: grayscale(100%);
+}
