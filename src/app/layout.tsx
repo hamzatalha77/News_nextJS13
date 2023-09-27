@@ -1,10 +1,10 @@
 import Navbar from '@/components/navbar/Navbar'
 import './globals.css'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Inter, Dela_Gothic_One } from 'next/font/google'
 import Footer from '@/components/footer/Footer'
 
-const inter = Inter({ subsets: ['latin'] })
+const delaGothicOne = Dela_Gothic_One({ subsets: [''] })
 
 export const metadata: Metadata = {
   title: 'Penta News',
@@ -18,7 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={delaGothicOne.className}>
         <div className="max-w-[1366px] min-h-screen flex flex-col justify-between mx-auto my-0 px-[60px] py-0">
           <Navbar />
           {children}
