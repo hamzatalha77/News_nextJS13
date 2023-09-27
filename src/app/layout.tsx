@@ -1,12 +1,16 @@
 import Navbar from '@/components/navbar/Navbar'
 import './globals.css'
 import type { Metadata } from 'next'
-import { Dela_Gothic_One } from 'next/font/google'
+import { Fjalla_One } from 'next/font/google'
 import Footer from '@/components/footer/Footer'
 
-const delaGothicOne = Dela_Gothic_One({
-  subsets: ['vietnamese'],
-  weight: '400'
+import { Roboto } from 'next/font/google'
+
+const fjalla_One = Fjalla_One({
+  weight: ['400'],
+  style: ['normal'],
+  subsets: ['latin'],
+  display: 'swap'
 })
 
 export const metadata: Metadata = {
@@ -21,7 +25,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={delaGothicOne.className}>
+      <body className={fjalla_One.className}>
         <div className="max-w-[1366px] min-h-screen flex flex-col justify-between mx-auto my-0 px-[60px] py-0">
           <Navbar />
           {children}
