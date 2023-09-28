@@ -8,7 +8,12 @@ const Contact = () => {
       <h1 className="text-6xl mb-24 text-center">Let`s Keep in Touch</h1>
       <div className="flex items-center gap-24">
         <div className="flex-1 h-[500px] relative">
-          <Image src="/contactme.png" alt="" fill={true} />
+          <Image
+            className={styles.image}
+            src="/contactme.png"
+            alt="contact us"
+            fill={true}
+          />
         </div>
         <form className="flex-1 flex flex-col gap-5">
           <input className={styles.input} placeholder="Your Name" type="text" />
