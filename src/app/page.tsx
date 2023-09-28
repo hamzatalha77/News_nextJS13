@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import Hero from '../../public/team1.png'
+import Hero from '../../public/homepage.png'
 import styles from './page.module.css'
 import Buttons from '@/components/buttons/buttons'
 export default function Home() {
@@ -16,7 +16,7 @@ export default function Home() {
         <Buttons url="portfolio" text="See My Work" />
       </div>
       <div className="flex-1 flex flex-col gap-12">
-        <Image src={Hero} className="object-cover" alt="home" />
+        <Image src={Hero} className={styles.image} alt="home" />
       </div>
     </div>
   )
