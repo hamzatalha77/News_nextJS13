@@ -3,16 +3,16 @@ import React from 'react'
 
 const Portfolio = () => {
   return (
-    <div>
-      <h1>Choose a Gallery</h1>
-      <div>
-        <Link href="/portfolio/illustrations">
+    <div className="">
+      <h1 className="m-[20px 0px]">Choose a Gallery</h1>
+      <div className="flex gap-14">
+        <Link className="item" href="/portfolio/illustrations">
           <span>Illustrations</span>
         </Link>
-        <Link href="/portfolio/websites">
+        <Link className="item" href="/portfolio/websites">
           <span>Websites</span>
         </Link>
-        <Link href="/portfolio/applications">
+        <Link className="item" href="/portfolio/applications">
           <span>Applications</span>
         </Link>
       </div>
