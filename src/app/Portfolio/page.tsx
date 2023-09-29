@@ -6,8 +6,15 @@ const Portfolio = () => {
     <div>
       <h1>Choose a Gallery</h1>
       <div>
-        <Link href="/portfolio/illustrations" />
-        <span>Illustrations</span>
+        <Link href="/portfolio/illustrations">
+          <span>Illustrations</span>
+        </Link>
+        <Link href="/portfolio/websites">
+          <span>Websites</span>
+        </Link>
+        <Link href="/portfolio/applications">
+          <span>Applications</span>
+        </Link>
       </div>
     </div>
   )
