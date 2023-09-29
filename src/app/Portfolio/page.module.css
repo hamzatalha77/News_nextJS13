@@ -7,8 +7,14 @@
   width: 300px;
   height: 400px;
   position: relative;
-  background-size: cover;
+  background-size: cover !important;
 }
 .item:nth-child(1) {
-  background: url('/');
+  background: url('/wall (1).jpg');
+}
+.item:nth-child(2) {
+  background: url('/wall (2).jpg');
+}
+.item:nth-child(3) {
+  background: url('/wall (3).jpg');
 }
