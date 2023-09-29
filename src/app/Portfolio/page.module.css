@@ -1,5 +1,6 @@
 .selectTitle {
   margin: 20px 0px;
+  font-size: 30px;
 }
 .item {
   border: 5px solid #bbb;
@@ -17,4 +18,15 @@
 }
 .item:nth-child(3) {
   background: url('/wall (3).jpg');
+}
+.title {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  font-size: 40px;
+  font-weight: bold;
+}
+.item:hover .title {
+  color: #66fcf1;
+  transition: ease-in-out 1.3s;
 }
