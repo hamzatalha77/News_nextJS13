@@ -6,13 +6,13 @@ const Portfolio = () => {
     <div className="">
       <h1 className={styles.selectTitle}>Choose a Gallery</h1>
       <div className="flex gap-14">
-        <Link className={styles.item} href="/portfolio/illustrations">
+        <Link href="/portfolio/illustrations" className={styles.item}>
           <span className={styles.title}>Illustrations</span>
         </Link>
-        <Link className={styles.item} href="/portfolio/websites">
+        <Link href="/portfolio/websites" className={styles.item}>
           <span className={styles.title}>Websites</span>
         </Link>
-        <Link className={styles.item} href="/portfolio/applications">
+        <Link href="/portfolio/applications" className={styles.item}>
           <span className={styles.title}>Applications</span>
         </Link>
       </div>
