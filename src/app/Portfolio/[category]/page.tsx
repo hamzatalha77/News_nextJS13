@@ -8,7 +8,7 @@ const Category = ({ params }: any) => {
       <h1 className="text-[#66fcf1]">{params.category}</h1>
       <div className={styles.item}>
         <div className="flex-1 flex flex-col gap-5">
-          <h1>This is a title</h1>
+          <h1 className="text-6xl">This is a title</h1>
           <p>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia,
             reprehenderit. Culpa unde perspiciatis dolorum modi autem sunt minus
