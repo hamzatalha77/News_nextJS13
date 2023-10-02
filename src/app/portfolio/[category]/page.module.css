@@ -1,0 +1,9 @@
+.item {
+  display: flex;
+  gap: 50px;
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+.item:nth-child(2n + 1) {
+  flex-direction: row-reverse;
+}
