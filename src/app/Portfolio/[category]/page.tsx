@@ -8,8 +8,8 @@ const Category = ({ params }: any) => {
       <h1 className="text-[#66fcf1] text-6xl font-bold">{params.category}</h1>
       <div className={styles.item}>
         <div className="flex-1 flex flex-col gap-5">
-          <h1 className="text-6xl">This is a title</h1>
-          <p>
+          <h1 className="text-5xl">This is a title</h1>
+          <p className="text-xl">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia,
             reprehenderit. Culpa unde perspiciatis dolorum modi autem sunt minus
             pariatur recusandae rem magnam cupiditate veritatis nisi, inventore
@@ -28,8 +28,8 @@ const Category = ({ params }: any) => {
       </div>
       <div className={styles.item}>
         <div className="flex-1 flex flex-col gap-5">
-          <h1 className="text-6xl">This is a title</h1>
-          <p>
+          <h1 className="text-5xl">This is a title</h1>
+          <p className="text-xl">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia,
             reprehenderit. Culpa unde perspiciatis dolorum modi autem sunt minus
             pariatur recusandae rem magnam cupiditate veritatis nisi, inventore
@@ -48,8 +48,8 @@ const Category = ({ params }: any) => {
       </div>
       <div className={styles.item}>
         <div className="flex-1 flex flex-col gap-5">
-          <h1 className="text-6xl">This is a title</h1>
-          <p>
+          <h1 className="text-5xl">This is a title</h1>
+          <p className="text-xl">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia,
             reprehenderit. Culpa unde perspiciatis dolorum modi autem sunt minus
             pariatur recusandae rem magnam cupiditate veritatis nisi, inventore
