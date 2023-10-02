@@ -5,9 +5,14 @@ import React from 'react'
 const Blog = () => {
   return (
     <div>
-      <Link href="/testId">
+      <Link href="/blog/testId">
         <div>
-          <Image src="" alt="blog" width={400} height={250} />
+          <Image
+            src="https://www.referenseo.com/wp-content/uploads/2019/03/image-attractive-960x540.jpg"
+            alt="blog"
+            width={400}
+            height={250}
+          />
         </div>
         <div>
           <h1>this is a title</h1>
@@ -19,9 +24,14 @@ const Blog = () => {
           </p>
         </div>
       </Link>
-      <Link href="/testId">
+      <Link href="/blog/testId">
         <div>
-          <Image src="" alt="blog" width={400} height={250} />
+          <Image
+            src="https://www.referenseo.com/wp-content/uploads/2019/03/image-attractive-960x540.jpg"
+            alt="blog"
+            width={400}
+            height={250}
+          />
         </div>
         <div>
           <h1>this is a title</h1>
@@ -33,9 +43,14 @@ const Blog = () => {
           </p>
         </div>
       </Link>
-      <Link href="/testId">
+      <Link href="/blog/testId">
         <div>
-          <Image src="" alt="blog" width={400} height={250} />
+          <Image
+            src="https://www.referenseo.com/wp-content/uploads/2019/03/image-attractive-960x540.jpg"
+            alt="blog"
+            width={400}
+            height={250}
+          />
         </div>
         <div>
           <h1>this is a title</h1>
@@ -47,9 +62,14 @@ const Blog = () => {
           </p>
         </div>
       </Link>
-      <Link href="/testId">
+      <Link href="/blog/testId">
         <div>
-          <Image src="" alt="blog" width={400} height={250} />
+          <Image
+            src="https://www.referenseo.com/wp-content/uploads/2019/03/image-attractive-960x540.jpg"
+            alt="blog"
+            width={400}
+            height={250}
+          />
         </div>
         <div>
           <h1>this is a title</h1>
@@ -61,9 +81,14 @@ const Blog = () => {
           </p>
         </div>
       </Link>
-      <Link href="/testId">
+      <Link href="/blog/testId">
         <div>
-          <Image src="" alt="blog" width={400} height={250} />
+          <Image
+            src="https://www.referenseo.com/wp-content/uploads/2019/03/image-attractive-960x540.jpg"
+            alt="blog"
+            width={400}
+            height={250}
+          />
         </div>
         <div>
           <h1>this is a title</h1>
