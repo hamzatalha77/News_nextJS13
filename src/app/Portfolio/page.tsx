@@ -3,7 +3,7 @@ import React from 'react'
 import styles from './page.module.css'
 const Portfolio = () => {
   return (
-    <div className="">
+    <div>
       <h1 className={styles.selectTitle}>Choose a Gallery</h1>
       <div className="flex gap-14">
         <Link href="/portfolio/illustrations" className={styles.item}>
