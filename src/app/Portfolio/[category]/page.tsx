@@ -5,7 +5,7 @@ import styles from './page.module.css'
 const Category = ({ params }: any) => {
   return (
     <div>
-      <h1 className="text-[#66fcf1]">{params.category}</h1>
+      <h1 className="text-[#66fcf1] text-6xl font-bold">{params.category}</h1>
       <div className={styles.item}>
         <div className="flex-1 flex flex-col gap-5">
           <h1 className="text-6xl">This is a title</h1>
@@ -39,7 +39,7 @@ const Category = ({ params }: any) => {
         </div>
         <div className="flex-1 h-[500px] relative">
           <Image
-            src="/desktop (1).jpg"
+            src="/desktop (2).jpg"
             fill={true}
             alt="desktop"
             className="object-cover"
@@ -59,7 +59,7 @@ const Category = ({ params }: any) => {
         </div>
         <div className="flex-1 h-[500px] relative">
           <Image
-            src="/desktop (1).jpg"
+            src="/desktop (3).jpg"
             fill={true}
             alt="desktop"
             className="object-cover"
