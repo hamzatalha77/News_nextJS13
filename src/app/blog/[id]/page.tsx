@@ -9,15 +9,15 @@ const BlogPost = () => {
           <h1 className="text-4xl"></h1>
           <p className="text-lg font-light"></p>
           <div className="flex items-center gap-2">
-            <Image src="" alt="" />
+            <Image className="object-cover rounded-[50%]" src="" alt="" />
             <span></span>
           </div>
         </div>
-        <div>
-          <Image src="" alt="" />
+        <div className="flex-1 h-72 relative">
+          <Image className="object-cover" src="" alt="" />
         </div>
       </div>
-      <div>
+      <div className="mt-12 text-xl font-light text-[#999] text-justify">
         <p></p>
       </div>
     </div>
