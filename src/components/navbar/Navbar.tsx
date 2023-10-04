@@ -2,6 +2,7 @@
 import Link from 'next/link'
 import React from 'react'
 import styles from './navbar.module.css'
+import DarkmodeToggle from '../DarkmodeToggle/DarkmodeToggle'
 const Navbar = () => {
   return (
     <div className={styles.container}>
@@ -9,6 +10,7 @@ const Navbar = () => {
         Penta News
       </Link>
       <div className="flex items-center gap-5">
+        <DarkmodeToggle />
         <Link href="/">Home</Link>
         <Link href="/portfolio">Portfolio</Link>
         <Link href="/blog">Blog</Link>
