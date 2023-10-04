@@ -1,7 +1,12 @@
 'use client'
 import { createContext, useState } from 'react'
 
-export const ThemeContext = createContext({})
+interface MyTheme {
+  toggle: () => void
+  mode: string
+}
+
+export const ThemeContext = createContext<MyTheme | undefined>(undefined)
 export const ThemeProvider = ({ children }: any) => {
   const [mode, setMode] = useState('dark')
   const toggle = () => {
