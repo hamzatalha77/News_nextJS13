@@ -1,9 +1,11 @@
 'use client'
-import React, { useContext } from 'react'
+import React from 'react'
 import styles from './DarkmodeToggle.module.css'
-import { ThemeContext } from '@/context/ThemeContext'
+import { useTheme } from './themeContext'
+
 const DarkmodeToggle = () => {
-  const { toggle, mode } = useContext(ThemeContext)
+  const { toggle, mode } = useTheme() // Use the useTheme hook to access the context value
+
   return (
     <div className={styles.container} onClick={toggle}>
       <div className={styles.icon}>🌙</div>
