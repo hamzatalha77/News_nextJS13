@@ -3,6 +3,7 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Fjalla_One } from 'next/font/google'
 import Footer from '@/components/footer/Footer'
+import { ThemeProvider } from '@/context/ThemeContext'
 
 const fjalla_One = Fjalla_One({
   weight: ['400'],
@@ -24,11 +25,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={fjalla_One.className}>
-        <div className="max-w-[1366px] min-h-screen flex flex-col justify-between mx-auto my-0 px-[60px] py-0">
-          <Navbar />
-          {children}
-          <Footer />
-        </div>
+        <ThemeProvider>
+          <div className="max-w-[1366px] min-h-screen flex flex-col justify-between mx-auto my-0 px-[60px] py-0">
+            <Navbar />
+            {children}
+            <Footer />
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   )
