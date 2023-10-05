@@ -4,13 +4,7 @@ import styles from './DarkmodeToggle.module.css'
 import { ThemeContext } from '@/context/ThemeContext'
 
 const DarkmodeToggle = () => {
-  const theme = useContext(ThemeContext)
-
-  if (!theme) {
-    return <div>Loading or handling the missing context...</div>
-  }
-
-  const { toggle, mode } = theme
+  const { toggle, mode } = useContext(ThemeContext)
 
   return (
     <div className={styles.container} onClick={toggle}>
