@@ -1,13 +1,8 @@
 'use client'
 import { createContext, useState } from 'react'
 
-interface MyTheme {
-  toggle: () => void
-  mode: string
-}
-
-export const ThemeContext = createContext<MyTheme | undefined>(undefined)
-export const ThemeProvider = ({ children }: any) => {
+export const ThemeContext = createContext()
+export const ThemeProvider = ({ children }) => {
   const [mode, setMode] = useState('dark')
   const toggle = () => {
     setMode((prev) => (prev === 'dark' ? 'light' : 'dark'))
