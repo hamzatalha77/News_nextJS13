@@ -2,6 +2,9 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
+async function getData() {
+  const res = await fetch('')
+}
 const Blog = () => {
   return (
     <div>
