@@ -4,6 +4,9 @@ import React from 'react'
 
 async function getData() {
   const res = await fetch('')
+  if (!res.ok) {
+    throw new Error('Failed to Fetch Data!')
+  }
 }
 const Blog = () => {
   return (
