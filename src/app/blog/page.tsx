@@ -3,12 +3,13 @@ import Link from 'next/link'
 import React from 'react'
 
 async function getData() {
-  const res = await fetch('')
+  const res = await fetch('https://jsonplaceholder.typicode.com/posts')
   if (!res.ok) {
     throw new Error('Failed to Fetch Data!')
   }
 }
-const Blog = () => {
+const Blog = async () => {
+  const data = await getData()
   return (
     <div>
       <Link href="/blog/testId">
