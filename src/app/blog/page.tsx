@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 async function getData() {
   const res = await fetch('https://jsonplaceholder.typicode.com/posts', {
@@ -9,13 +9,29 @@ async function getData() {
   if (!res.ok) {
     throw new Error('Failed to Fetch Data!')
   }
+  const data = await res.json()
+  return data
 }
-const Blog = async () => {
-  const data = await getData()
+
+const Blog = () => {
+  const [data, setData] = useState([])
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const result = await getData()
+        setData(result)
+      } catch (error) {
+        console.error('Error fetching data:', error)
+      }
+    }
+    fetchData()
+  }, [])
+
   return (
     <div>
-      {data.map((item: any) => {
-        ;<Link href="/blog/testId" key={item.id}>
+      {data.map((item: any) => (
+        <Link href={`/blog/${item.id}`} key={item.id}>
           <div>
             <Image
               src="https://www.referenseo.com/wp-content/uploads/2019/03/image-attractive-960x540.jpg"
@@ -25,16 +41,11 @@ const Blog = async () => {
             />
           </div>
           <div>
-            <h1>this is a title</h1>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores,
-              ipsa nulla. Labore, officia ad. Dolore ea saepe cum officiis eos
-              repellat! Quisquam corrupti reiciendis ullam rerum vero, ad neque
-              minus?
-            </p>
+            <h1>{item.title}</h1>
+            <p>{item.body}</p>
           </div>
         </Link>
-      })}
+      ))}
     </div>
   )
 }
