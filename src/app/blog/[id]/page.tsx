@@ -2,7 +2,7 @@ import Image from 'next/image'
 import React from 'react'
 import Avatar from '../../../../public/avatar.png'
 
-async function getData({ id }: any) {
+async function getData(id: any) {
   const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
     cache: 'no-store'
   })
@@ -18,9 +18,7 @@ const BlogPost = async ({ params }: any) => {
     <div>
       <div className="flex">
         <div className="flex-1 flex flex-col justify-between">
-          <h1 className="text-4xl">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          </h1>
+          <h1 className="text-4xl">{data.title}</h1>
           <p className="text-lg font-light">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae nemo
             iste dolorum minus tempore fuga dolor molestiae. Reprehenderit eius
