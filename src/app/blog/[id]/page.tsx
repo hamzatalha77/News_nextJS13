@@ -1,7 +1,19 @@
 import Image from 'next/image'
 import React from 'react'
 import Avatar from '../../../../public/avatar.png'
-const BlogPost = () => {
+
+async function getData({ id }: any) {
+  const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
+    cache: 'no-store'
+  })
+  if (!res.ok) {
+    throw new Error('Failed to Fetch Data!')
+  }
+  const data = await res.json()
+  return data
+}
+const BlogPost = async ({ params }: any) => {
+  const data = await getData(params.id)
   return (
     <div>
       <div className="flex">
