@@ -5,7 +5,7 @@ import React, { useEffect, useState } from 'react'
 
 async function getData() {
   const res = await fetch('https://jsonplaceholder.typicode.com/posts', {
-    next: { revalidate: 10 }
+    cache: 'no-store'
   })
   if (!res.ok) {
     throw new Error('Failed to Fetch Data!')
