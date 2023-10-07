@@ -1,13 +1,13 @@
 import Image from 'next/image'
 import React from 'react'
 import Avatar from '../../../../public/avatar.png'
-
+import { notFound } from 'next/navigation'
 async function getData(id: any) {
   const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
     cache: 'no-store'
   })
   if (!res.ok) {
-    throw new Error('Failed to Fetch Data!')
+    return notFound()
   }
   const data = await res.json()
   return data
