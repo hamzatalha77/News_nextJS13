@@ -2,7 +2,18 @@ import Buttons from '@/components/buttons/buttons'
 import Image from 'next/image'
 import React from 'react'
 import styles from './page.module.css'
+import { items } from './data'
+import { notFound } from 'next/navigation'
+const getData = (cat) => {
+  const data = items[cat]
+
+  if (data) {
+    return data
+  }
+  return notFound()
+}
 const Category = ({ params }: any) => {
+  const data = getData(params.category)
   return (
     <div>
       <h1 className="text-[#66fcf1] text-6xl font-bold">{params.category}</h1>
