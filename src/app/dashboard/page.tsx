@@ -21,7 +21,9 @@ const Dashboard = () => {
   //   }
   //   getData()
   // }, [])
-  const fetcher = (...args) => fetch(...args).then((res) => res.json())
+  const fetcher = (...args: [RequestInfo, RequestInit?]) =>
+    fetch(...args).then((res) => res.json())
+
   const { data, error, isLoading } = useSWR(
     'https://jsonplaceholder.typicode.com/posts',
     fetcher
