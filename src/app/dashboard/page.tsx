@@ -12,11 +12,13 @@ const Dashboard = () => {
         cache: 'no-store'
       })
       if (!res.ok) {
-        return new Error('Failed To Fetch Data')
+        setError(true)
       }
-      const data = await res.json()
-      return data
+
+      setData(res.json())
+      setIsLoading(false)
     }
+    getData()
   }, [])
   return <div>Dashboard</div>
 }
