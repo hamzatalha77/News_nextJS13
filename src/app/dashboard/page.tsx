@@ -14,12 +14,13 @@ const Dashboard = () => {
       if (!res.ok) {
         setError(true)
       }
-
-      setData(res.json())
+      const data = await res.json()
+      setData(data)
       setIsLoading(false)
     }
     getData()
   }, [])
+  console.log(data)
   return <div>Dashboard</div>
 }
 
