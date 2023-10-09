@@ -20,18 +20,13 @@ const Category = ({ params }: any) => {
       {data.map((item: any) => (
         <div className={styles.item} key={item.id}>
           <div className="flex-1 flex flex-col gap-5">
-            <h1 className="text-5xl">This is a title</h1>
-            <p className="text-xl">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia,
-              reprehenderit. Culpa unde perspiciatis dolorum modi autem sunt
-              minus pariatur recusandae rem magnam cupiditate veritatis nisi,
-              inventore velit? Quo, repudiandae excepturi!
-            </p>
+            <h1 className="text-5xl">{item.title}</h1>
+            <p className="text-xl">{item.desc}</p>
             <Buttons text="See More" url="#" />
           </div>
           <div className="flex-1 h-[500px] relative">
             <Image
-              src="/desktop (1).jpg"
+              src={item.image}
               fill={true}
               alt="desktop"
               className="object-cover"
