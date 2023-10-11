@@ -12,7 +12,13 @@ interface Item {
   image: string
 }
 
-const getData = (cat: any): Item[] | null => {
+interface Items {
+  applications: Item[]
+  illustrations: Item[]
+  websites: Item[]
+}
+
+const getData = (cat: keyof Items): Item[] | null => {
   const data = items[cat]
 
   if (data) {
@@ -23,7 +29,7 @@ const getData = (cat: any): Item[] | null => {
 
 interface CategoryProps {
   params: {
-    category: string
+    category: keyof Items
   }
 }
 
