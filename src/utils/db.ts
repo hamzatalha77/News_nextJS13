@@ -2,7 +2,8 @@ import mongoose from 'mongoose'
 
 const connect = async () => {
   try {
-    await mongoose.connect(process.env.MONGO)
+    const mongoURI = process.env.MONGO || 'default-mongodb-uri'
+    await mongoose.connect(mongoURI)
   } catch (error) {
     throw Error('Connection Failed!')
   }
