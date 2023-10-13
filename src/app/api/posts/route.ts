@@ -1,5 +1,5 @@
-import { NextResponse } from 'next/server'
+import { NextRequest, NextResponse } from 'next/server'
 
-export const GET = async (request: any) => {
+export const GET = async (request: NextRequest) => {
   return new NextResponse("It's Works!", { status: 200 })
 }
