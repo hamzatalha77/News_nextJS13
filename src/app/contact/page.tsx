@@ -2,6 +2,12 @@ import Buttons from '@/components/buttons/buttons'
 import Image from 'next/image'
 import React from 'react'
 import styles from './page.module.css'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Penta News Contact Information',
+  description: 'This is Contact Page'
+}
 const Contact = () => {
   return (
     <div>
