@@ -1,8 +1,13 @@
 'use client'
+import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 
+export const metadata: Metadata = {
+  title: 'Penta News',
+  description: 'News Application'
+}
 async function getData() {
   const res = await fetch('https://localhost:3000/api/posts', {
     cache: 'no-store'
