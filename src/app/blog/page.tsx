@@ -1,5 +1,4 @@
 'use client'
-import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
@@ -13,14 +12,6 @@ async function getData() {
   }
   const data = await res.json()
   return data
-}
-
-export async function generateMetadata({ params }: any) {
-  const post = await getData(params.id)
-  return {
-    title: post.title,
-    description: post.desc
-  }
 }
 
 const Blog = () => {
