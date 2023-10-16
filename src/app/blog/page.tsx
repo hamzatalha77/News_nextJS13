@@ -4,7 +4,7 @@ import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 
 async function getData() {
-  const res = await fetch('https://jsonplaceholder.typicode.com/posts', {
+  const res = await fetch('https://localhost:3000/api/posts', {
     cache: 'no-store'
   })
   if (!res.ok) {
