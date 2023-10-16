@@ -32,18 +32,13 @@ const Blog = () => {
   return (
     <div>
       {data.map((item: any) => (
-        <Link href={`/blog/${item.id}`} key={item.id}>
+        <Link href={`/blog/${item._id}`} key={item._id}>
           <div>
-            <Image
-              src="https://www.referenseo.com/wp-content/uploads/2019/03/image-attractive-960x540.jpg"
-              alt="blog"
-              width={400}
-              height={250}
-            />
+            <Image src={item.img} alt="blog" width={400} height={250} />
           </div>
           <div>
             <h1>{item.title}</h1>
-            <p>{item.body}</p>
+            <p>{item.desc}</p>
           </div>
         </Link>
       ))}
