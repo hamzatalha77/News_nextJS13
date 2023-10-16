@@ -4,10 +4,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 
-export const metadata: Metadata = {
-  title: 'Penta News Blog',
-  description: 'This is The Blog Page'
-}
 async function getData() {
   const res = await fetch('https://localhost:3000/api/posts', {
     cache: 'no-store'
@@ -17,6 +13,14 @@ async function getData() {
   }
   const data = await res.json()
   return data
+}
+
+export async function generateMetadata({ params }: any) {
+  const post = await getData(params.id)
+  return {
+    title: post.title,
+    description: post.desc
+  }
 }
 
 const Blog = () => {
