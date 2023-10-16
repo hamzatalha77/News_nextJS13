@@ -11,6 +11,7 @@ const googleProviderConfig: Items = {
   clientSecret: process.env.GOOGLE_CLIENT_SECRET || ''
 }
 
-export default NextAuth({
+const handler = NextAuth({
   providers: [GoogleProvider(googleProviderConfig)]
 })
+export { handler as GET, handler as POST }
