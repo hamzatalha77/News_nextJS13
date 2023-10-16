@@ -19,7 +19,7 @@ const BlogPost = async ({ params }: any) => {
       <div className="flex">
         <div className="flex-1 flex flex-col justify-between">
           <h1 className="text-4xl">{data.title}</h1>
-          <p className="text-lg font-light">{data.body}</p>
+          <p className="text-lg font-light">{data.desc}</p>
           <div className="flex items-center gap-2">
             <Image
               className="object-cover rounded-[50%]"
