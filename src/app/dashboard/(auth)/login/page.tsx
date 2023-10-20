@@ -10,22 +10,8 @@ const Login = () => {
 
     const email = e.target[0].value
     const password = e.target[1].value
-    try {
-      const res = await fetch('/api/auth/register', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          email,
-          password
-        })
-      })
-      res.status === 201 &&
-        router.push('/dashboard/login?success=Account has been created')
-    } catch (error) {
-      setError(true)
-    }
+
+    signIn('credentials', { email, password })
   }
   return (
     <div className="flex items-center justify-center">
