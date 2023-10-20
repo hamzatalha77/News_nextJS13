@@ -24,7 +24,17 @@ const Dashboard = () => {
   //   getData()
   // }, [])
   const session = useSession()
+
   const router = useRouter()
+
+  const fetcher = (...args: [RequestInfo, RequestInit?]) =>
+    fetch(...args).then((res) => res.json())
+
+  const { data, error, isLoading } = useSWR(
+    'https://jsonplaceholder.typicode.com/posts',
+    fetcher
+  )
+
   if (session.status === 'loading') {
     return <p>Loading...</p>
   }
