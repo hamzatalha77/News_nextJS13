@@ -20,7 +20,13 @@ const Blog = async () => {
       {data.map((item: any) => (
         <Link href={`/blog/${item._id}`} key={item.id}>
           <div>
-            <Image src={item.img} alt="blog" width={400} height={250} />
+            <Image
+              src={item.img}
+              alt="blog"
+              width={400}
+              height={250}
+              priority={true}
+            />
           </div>
           <div>
             <h1>{item.title}</h1>
