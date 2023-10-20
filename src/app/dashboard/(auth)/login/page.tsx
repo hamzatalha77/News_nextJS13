@@ -29,7 +29,7 @@ const Login = () => {
           required
         />
         <button className="w-[300px] p-5 cursor-pointer bg-[#66fcf1] border-none rounded-md text-[#eee] font-light">
-          Register
+          Login
         </button>
       </form>
       <button onClick={() => signIn('Google')}>Login With GOOGLE</button>
