@@ -7,9 +7,9 @@ const Login = () => {
   const router = useRouter()
   const handleSubmit = async (e: any) => {
     e.preventDefault()
-    const name = e.target[0].value
-    const email = e.target[1].value
-    const password = e.target[2].value
+
+    const email = e.target[0].value
+    const password = e.target[1].value
     try {
       const res = await fetch('/api/auth/register', {
         method: 'POST',
@@ -17,7 +17,6 @@ const Login = () => {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          name,
           email,
           password
         })
