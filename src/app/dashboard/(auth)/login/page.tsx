@@ -33,12 +33,6 @@ const Login = () => {
       <form className="w-[300px] flex flex-col gap-5" onSubmit={handleSubmit}>
         <input
           className="p-5 bg-transparent border-solid border-2 border-gray-300 rounded-md text-[20px] font-bold"
-          placeholder="username"
-          type="text"
-          required
-        />
-        <input
-          className="p-5 bg-transparent border-solid border-2 border-gray-300 rounded-md text-[20px] font-bold"
           placeholder="Email"
           type="email"
           required
