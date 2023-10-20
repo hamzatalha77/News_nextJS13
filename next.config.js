@@ -4,7 +4,8 @@ const nextConfig = {
     domains: [
       'images.pexels.com',
       'www.referenseo.com',
-      'media.cloudbooklet.com'
+      'media.cloudbooklet.com',
+      'loremflickr.com'
     ]
   }
 }
