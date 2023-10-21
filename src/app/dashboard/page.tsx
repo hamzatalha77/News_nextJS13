@@ -5,6 +5,13 @@ import React, { useEffect, useState } from 'react'
 import useSWR from 'swr'
 import Image from 'next/image'
 
+interface Post {
+  _id: string
+  img: string
+  title: string
+  content: string
+  desc: string
+}
 const Dashboard = () => {
   const session = useSession()
 
@@ -57,7 +64,7 @@ const Dashboard = () => {
         <div>
           {isLoading
             ? 'Loading...'
-            : data?.map((post) => (
+            : data?.map((post: Post) => (
                 <div key={post._id}>
                   <div>
                     <Image src={post.img} alt="" />
