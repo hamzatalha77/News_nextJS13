@@ -5,7 +5,8 @@ const nextConfig = {
       'images.pexels.com',
       'www.referenseo.com',
       'media.cloudbooklet.com',
-      'loremflickr.com'
+      'loremflickr.com',
+      ' static.wikia.nocookie.net'
     ]
   }
 }
