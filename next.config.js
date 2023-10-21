@@ -6,7 +6,7 @@ const nextConfig = {
       'www.referenseo.com',
       'media.cloudbooklet.com',
       'loremflickr.com',
-      ' static.wikia.nocookie.net'
+      'static.wikia.nocookie.net'
     ]
   }
 }
