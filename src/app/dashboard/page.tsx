@@ -67,7 +67,7 @@ const Dashboard = () => {
             : data?.map((post: Post) => (
                 <div key={post._id}>
                   <div>
-                    <Image src={post.img} alt="" />
+                    <Image src={post.img} alt="" width={200} height={200} />
                   </div>
                   <h2>{post.title}</h2>
                   <span>X</span>
