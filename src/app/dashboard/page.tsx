@@ -3,6 +3,7 @@ import { useSession } from 'next-auth/react'
 import { useRouter } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
 import useSWR from 'swr'
+import Image from 'next/image'
 
 const Dashboard = () => {
   const session = useSession()
@@ -28,7 +29,18 @@ const Dashboard = () => {
   }
 
   if (session.status === 'authenticated') {
-    return <div>Dashboard</div>
+    return (
+      <div>
+        <div>
+          <div>
+            <Image src={} alt="" />
+          </div>
+          <h2></h2>
+          <span>X</span>
+        </div>
+        <form></form>
+      </div>
+    )
   }
 }
 
