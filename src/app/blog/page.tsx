@@ -18,7 +18,7 @@ const Blog = async () => {
   return (
     <div>
       {data.map((item: any) => (
-        <Link href={`/blog/${item._id}`} key={item.id}>
+        <Link href={`/blog/${item._id}`} key={item._id}>
           <div>
             <Image
               src={item.img}
