@@ -58,7 +58,16 @@ const Dashboard = () => {
       console.log(error)
     }
   }
-
+  const handleDelete = async (id: any) => {
+    try {
+      await fetch(`/api/posts/${id}`, {
+        method: 'DELETE'
+      })
+      mutate()
+    } catch (error) {
+      console.log(error)
+    }
+  }
   if (session.status === 'authenticated') {
     return (
       <div className="flex gap-[100px]">
@@ -80,7 +89,12 @@ const Dashboard = () => {
                     />
                   </div>
                   <h2>{post.title}</h2>
-                  <span className="cursor-pointer text-red-600">X</span>
+                  <span
+                    className="cursor-pointer text-red-600"
+                    onClick={() => handleDelete(post._id)}
+                  >
+                    X
+                  </span>
                 </div>
               ))}
         </div>
