@@ -2,15 +2,17 @@ import Image from 'next/image'
 import React from 'react'
 import Avatar from '../../../../public/avatar.png'
 import { notFound } from 'next/navigation'
+
 async function getData(id: any) {
-  const res = await fetch(`https://localhost:3000/api/posts/${id}`, {
+  const res = await fetch(`http://localhost:3000/api/posts/${id}`, {
     cache: 'no-store'
   })
+
   if (!res.ok) {
     return notFound()
   }
-  const data = await res.json()
-  return data
+
+  return res.json()
 }
 export async function generateMetadata({ params }: any) {
   const post = await getData(params.id)
