@@ -60,12 +60,15 @@ const Dashboard = () => {
 
   if (session.status === 'authenticated') {
     return (
-      <div>
-        <div>
+      <div className="flex gap-[100px]">
+        <div className="flex-1">
           {isLoading
             ? 'Loading...'
             : data?.map((post: Post) => (
-                <div key={post._id}>
+                <div
+                  className="flex items-center justify-between"
+                  key={post._id}
+                >
                   <div>
                     <Image src={post.img} alt="" width={200} height={200} />
                   </div>
@@ -74,7 +77,7 @@ const Dashboard = () => {
                 </div>
               ))}
         </div>
-        <form onSubmit={handleSubmit}>
+        <form className="flex-1" onSubmit={handleSubmit}>
           <h1>Add New Post</h1>
           <input type="text" placeholder="Title" />
           <input type="text" placeholder="Desc" />
