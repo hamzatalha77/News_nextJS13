@@ -55,15 +55,17 @@ const Dashboard = () => {
     return (
       <div>
         <div>
-          {data?.map((post) => (
-            <div key={post._id}>
-              <div>
-                <Image src={post.img} alt="" />
-              </div>
-              <h2>{post.title}</h2>
-              <span>X</span>
-            </div>
-          ))}
+          {isLoading
+            ? 'Loading...'
+            : data?.map((post) => (
+                <div key={post._id}>
+                  <div>
+                    <Image src={post.img} alt="" />
+                  </div>
+                  <h2>{post.title}</h2>
+                  <span>X</span>
+                </div>
+              ))}
         </div>
         <form onSubmit={handleSubmit}>
           <h1>Add New Post</h1>
