@@ -66,23 +66,46 @@ const Dashboard = () => {
             ? 'Loading...'
             : data?.map((post: Post) => (
                 <div
-                  className="flex items-center justify-between"
+                  className="flex items-center justify-between mx-0 my-[50px]"
                   key={post._id}
                 >
-                  <div>
-                    <Image src={post.img} alt="" width={200} height={200} />
+                  <div className="w-52 h-28 ">
+                    <Image
+                      className="object-cover"
+                      src={post.img}
+                      alt=""
+                      width={200}
+                      height={200}
+                    />
                   </div>
                   <h2>{post.title}</h2>
-                  <span>X</span>
+                  <span className="cursor-pointer text-red-600">X</span>
                 </div>
               ))}
         </div>
-        <form className="flex-1" onSubmit={handleSubmit}>
+        <form className="flex flex-1 flex-col gap-5" onSubmit={handleSubmit}>
           <h1>Add New Post</h1>
-          <input type="text" placeholder="Title" />
-          <input type="text" placeholder="Desc" />
-          <input type="text" placeholder="Image" />
-          <textarea placeholder="Content" cols={30} rows={10}></textarea>
+          <input
+            className="p-3 bg-transparent border-2 border-solid border-[#bbb] rounded text-[#bbb] text-lg font-bold"
+            type="text"
+            placeholder="Title"
+          />
+          <input
+            className="p-3 bg-transparent border-2 border-solid border-[#bbb] rounded text-[#bbb] text-lg font-bold"
+            type="text"
+            placeholder="Desc"
+          />
+          <input
+            className="p-3 bg-transparent border-2 border-solid border-[#bbb] rounded text-[#bbb] text-lg font-bold"
+            type="text"
+            placeholder="Image"
+          />
+          <textarea
+            className="p-3 bg-transparent border-2 border-solid border-[#bbb] rounded text-[#bbb] text-lg font-bold"
+            placeholder="Content"
+            cols={30}
+            rows={10}
+          ></textarea>
           <button>Send</button>
         </form>
       </div>
