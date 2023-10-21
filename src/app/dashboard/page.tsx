@@ -106,7 +106,9 @@ const Dashboard = () => {
             cols={30}
             rows={10}
           ></textarea>
-          <button>Send</button>
+          <button className="p-5 cursor-pointer bg-[#66FCF1] border-none rounded text-[#eee] font-bold">
+            Send
+          </button>
         </form>
       </div>
     )
