@@ -13,9 +13,9 @@ const Dashboard = () => {
   const fetcher = (...args: [RequestInfo, RequestInit?]) =>
     fetch(...args).then((res) => res.json())
 
-  const username = session?.data?.user?.name // Safely access the username
+  const theusername = session?.data?.user?.name // Safely access the username
   const { data, error, isLoading } = useSWR(
-    `/api/posts?username=${username}`,
+    `/api/posts?username=${theusername}`,
     fetcher
   )
 
@@ -28,17 +28,51 @@ const Dashboard = () => {
     router?.push('/dashboard/login')
   }
 
+  const handleSubmit = async (e: any) => {
+    e.preventDefault()
+    const title = e.target[0].value
+    const desc = e.target[1].value
+    const img = e.target[2].value
+    const content = e.target[3].value
+
+    try {
+      await fetch('/api/posts', {
+        method: 'POST',
+        body: JSON.stringify({
+          title,
+          desc,
+          img,
+          content,
+          username: theusername
+        })
+      })
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   if (session.status === 'authenticated') {
     return (
       <div>
         <div>
-          <div>
-            <Image src={} alt="" />
-          </div>
-          <h2></h2>
-          <span>X</span>
+          {data.map((post) => (
+            <div key={post._id}>
+              <div>
+                <Image src={post.img} alt="" />
+              </div>
+              <h2>{post.title}</h2>
+              <span>X</span>
+            </div>
+          ))}
         </div>
-        <form></form>
+        <form onSubmit={handleSubmit}>
+          <h1>Add New Post</h1>
+          <input type="text" placeholder="Title" />
+          <input type="text" placeholder="Desc" />
+          <input type="text" placeholder="Image" />
+          <textarea placeholder="Content" cols={30} rows={10}></textarea>
+          <button>Send</button>
+        </form>
       </div>
     )
   }
