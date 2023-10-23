@@ -69,6 +69,7 @@ const Dashboard = () => {
       console.log(error)
     }
   }
+  const handleUpdate = async (id: any) => {}
   if (session.status === 'authenticated') {
     return (
       <div className="flex gap-[100px]">
@@ -95,6 +96,12 @@ const Dashboard = () => {
                     onClick={() => handleDelete(post._id)}
                   >
                     X
+                  </span>
+                  <span
+                    className="cursor-pointer text-green-600"
+                    onClick={() => handleUpdate(post._id)}
+                  >
+                    Update
                   </span>
                 </div>
               ))}
