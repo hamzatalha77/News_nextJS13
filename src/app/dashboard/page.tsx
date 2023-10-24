@@ -20,7 +20,7 @@ const Dashboard = () => {
   const fetcher = (...args: [RequestInfo, RequestInit?]) =>
     fetch(...args).then((res) => res.json())
 
-  const theusername = session?.data?.user?.name // Safely access the username
+  const theusername = session?.data?.user?.name
   const { data, mutate, error, isLoading } = useSWR(
     `/api/posts?username=${theusername}`,
     fetcher
