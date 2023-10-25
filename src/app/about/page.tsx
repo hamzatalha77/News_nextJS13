@@ -25,10 +25,10 @@ const About = () => {
             tempora aut eos vitae amet tenetur eligendi aspernatur magnam ipsum
             impedit inventore obcaecati, facilis incidunt accusamus optio, natus
             mollitia porro. Nihil. <br /> <br />
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita
-            aspernatur quod beatae illo, suscipit non possimus ducimus
-            voluptates sunt, velit ab, fugiat modi perferendis aliquam
-            praesentium rerum! Reprehenderit, reiciendis debitis?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas quod,
+            molestias dolore minus tenetur at, voluptates iusto dignissimos
+            porro cupiditate esse ipsum! Nulla eius maxime magnam quas dolor
+            optio nesciunt?
           </p>
         </div>
         <div className="flex-1 mt-12 flex flex-col gap-8">

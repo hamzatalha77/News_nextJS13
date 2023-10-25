@@ -53,8 +53,8 @@ const Register = () => {
         <button className="w-[300px] p-5 cursor-pointer bg-[#66fcf1] border-none rounded-md text-[#eee] font-light">
           Register
         </button>
-        <Link href="/dashboard/login">Login with an existing account</Link>
       </form>
+      <Link href="/dashboard/login">Login with an existing account</Link>
     </div>
   )
 }
