@@ -1,6 +1,6 @@
-'use client'
+// Import necessary modules and components
 import { useSession } from 'next-auth/react'
-import { useRouter } from 'next/navigation'
+import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
 import useSWR from 'swr'
 import Image from 'next/image'
@@ -12,20 +12,24 @@ interface Post {
   content: string
   desc: string
 }
+
 const Dashboard = () => {
   const session = useSession()
-
   const router = useRouter()
 
+  // Define a fetcher function for SWR
   const fetcher = (...args: [RequestInfo, RequestInit?]) =>
     fetch(...args).then((res) => res.json())
 
   const theusername = session?.data?.user?.name
+
+  // Use SWR to fetch data from your API
   const { data, mutate, error, isLoading } = useSWR(
     `/api/posts?username=${theusername}`,
     fetcher
   )
 
+  // State to handle edit/update functionality
   const [isEditing, setIsEditing] = useState(false)
   const [editPostId, setEditPostId] = useState('')
   const [formData, setFormData] = useState({
@@ -38,6 +42,7 @@ const Dashboard = () => {
   if (session.status === 'loading') {
     return <p>Loading...</p>
   }
+
   if (session.status === 'unauthenticated') {
     router?.push('/dashboard/login')
   }
@@ -51,6 +56,9 @@ const Dashboard = () => {
       try {
         await fetch(`/api/posts/${editPostId}`, {
           method: 'PUT', // Assuming you have an API route to update posts
+          headers: {
+            'Content-Type': 'application/json'
+          },
           body: JSON.stringify({
             title,
             desc,
@@ -59,7 +67,20 @@ const Dashboard = () => {
             username: theusername
           })
         })
-        mutate()
+        // Update the local data after the successful update
+        const updatedData = data.map((post: Post) => {
+          if (post._id === editPostId) {
+            return {
+              ...post,
+              title,
+              desc,
+              img,
+              content
+            }
+          }
+          return post
+        })
+        mutate(updatedData, false)
         setFormData({
           title: '',
           desc: '',
@@ -74,8 +95,11 @@ const Dashboard = () => {
     } else {
       // Handle the add/new post logic here
       try {
-        await fetch('/api/posts', {
+        const response = await fetch('/api/posts', {
           method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
           body: JSON.stringify({
             title,
             desc,
@@ -84,15 +108,23 @@ const Dashboard = () => {
             username: theusername
           })
         })
-        mutate()
-        setFormData({
-          title: '',
-          desc: '',
-          img: '',
-          content: ''
-        })
+
+        if (response.ok) {
+          const newPost = await response.json()
+          // Update the local data with the newly added post
+          const updatedData = [...data, newPost]
+          mutate(updatedData, false)
+          setFormData({
+            title: '',
+            desc: '',
+            img: '',
+            content: ''
+          })
+        } else {
+          console.error('Failed to add a new post')
+        }
       } catch (error) {
-        console.log(error)
+        console.error(error)
       }
     }
   }
@@ -102,7 +134,9 @@ const Dashboard = () => {
       await fetch(`/api/posts/${id}`, {
         method: 'DELETE'
       })
-      mutate()
+      // Update the local data after a successful delete
+      const updatedData = data.filter((post: Post) => post._id !== id)
+      mutate(updatedData, false)
     } catch (error) {
       console.log(error)
     }
