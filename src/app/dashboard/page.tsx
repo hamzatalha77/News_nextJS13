@@ -26,7 +26,14 @@ const Dashboard = () => {
     fetcher
   )
 
-  console.log(data)
+  const [isEditing, setIsEditing] = useState(false)
+  const [editPostId, setEditPostId] = useState('')
+  const [formData, setFormData] = useState({
+    title: '',
+    desc: '',
+    img: '',
+    content: ''
+  })
 
   if (session.status === 'loading') {
     return <p>Loading...</p>
@@ -37,28 +44,59 @@ const Dashboard = () => {
 
   const handleSubmit = async (e: any) => {
     e.preventDefault()
-    const title = e.target[0].value
-    const desc = e.target[1].value
-    const img = e.target[2].value
-    const content = e.target[3].value
+    const { title, desc, img, content } = formData
 
-    try {
-      await fetch('/api/posts', {
-        method: 'POST',
-        body: JSON.stringify({
-          title,
-          desc,
-          img,
-          content,
-          username: theusername
+    if (isEditing) {
+      // Handle the edit/update logic here
+      try {
+        await fetch(`/api/posts/${editPostId}`, {
+          method: 'PUT', // Assuming you have an API route to update posts
+          body: JSON.stringify({
+            title,
+            desc,
+            img,
+            content,
+            username: theusername
+          })
         })
-      })
-      mutate()
-      e.target.reset()
-    } catch (error) {
-      console.log(error)
+        mutate()
+        setFormData({
+          title: '',
+          desc: '',
+          img: '',
+          content: ''
+        })
+        setIsEditing(false)
+        setEditPostId('')
+      } catch (error) {
+        console.log(error)
+      }
+    } else {
+      // Handle the add/new post logic here
+      try {
+        await fetch('/api/posts', {
+          method: 'POST',
+          body: JSON.stringify({
+            title,
+            desc,
+            img,
+            content,
+            username: theusername
+          })
+        })
+        mutate()
+        setFormData({
+          title: '',
+          desc: '',
+          img: '',
+          content: ''
+        })
+      } catch (error) {
+        console.log(error)
+      }
     }
   }
+
   const handleDelete = async (id: any) => {
     try {
       await fetch(`/api/posts/${id}`, {
@@ -69,7 +107,23 @@ const Dashboard = () => {
       console.log(error)
     }
   }
-  const handleUpdate = async (id: any) => {}
+
+  const handleUpdate = (id: string) => {
+    // Find the post by ID in the data array
+    const postToUpdate = data.find((post: Post) => post._id === id)
+
+    if (postToUpdate) {
+      setIsEditing(true)
+      setEditPostId(id)
+      setFormData({
+        title: postToUpdate.title,
+        desc: postToUpdate.desc,
+        img: postToUpdate.img,
+        content: postToUpdate.content
+      })
+    }
+  }
+
   if (session.status === 'authenticated') {
     return (
       <div className="flex gap-[100px]">
@@ -107,30 +161,42 @@ const Dashboard = () => {
               ))}
         </div>
         <form className="flex flex-1 flex-col gap-5" onSubmit={handleSubmit}>
-          <h1>Add New Post</h1>
+          <h1>{isEditing ? 'Update Post' : 'Add New Post'}</h1>
           <input
             className="p-3 bg-transparent border-2 border-solid border-[#bbb] rounded text-[#bbb] text-lg font-bold"
             type="text"
             placeholder="Title"
+            value={formData.title}
+            onChange={(e) =>
+              setFormData({ ...formData, title: e.target.value })
+            }
           />
           <input
             className="p-3 bg-transparent border-2 border-solid border-[#bbb] rounded text-[#bbb] text-lg font-bold"
             type="text"
             placeholder="Desc"
+            value={formData.desc}
+            onChange={(e) => setFormData({ ...formData, desc: e.target.value })}
           />
           <input
             className="p-3 bg-transparent border-2 border-solid border-[#bbb] rounded text-[#bbb] text-lg font-bold"
             type="text"
             placeholder="Image"
+            value={formData.img}
+            onChange={(e) => setFormData({ ...formData, img: e.target.value })}
           />
           <textarea
             className="p-3 bg-transparent border-2 border-solid border-[#bbb] rounded text-[#bbb] text-lg font-bold"
             placeholder="Content"
+            value={formData.content}
+            onChange={(e) =>
+              setFormData({ ...formData, content: e.target.value })
+            }
             cols={30}
             rows={10}
           ></textarea>
           <button className="p-5 cursor-pointer bg-[#66FCF1] border-none rounded text-[#eee] font-bold">
-            Send
+            {isEditing ? 'Update' : 'Add'}
           </button>
         </form>
       </div>
