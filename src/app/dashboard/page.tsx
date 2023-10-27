@@ -14,7 +14,6 @@ interface Post {
 }
 const Dashboard = () => {
   const session = useSession()
-
   const router = useRouter()
 
   const fetcher = (...args: [RequestInfo, RequestInit?]) =>
@@ -45,7 +44,7 @@ const Dashboard = () => {
   const handleSubmit = async (e: any) => {
     e.preventDefault()
     const { title, desc, img, content } = formData
-
+    console.log('formData:', formData)
     if (isEditing) {
       // Handle the edit/update logic here
       try {
