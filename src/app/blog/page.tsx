@@ -1,38 +1,19 @@
-'use client'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
+import React from 'react'
+
 async function getData() {
   const res = await fetch('http://localhost:3000/api/posts', {
     cache: 'no-store'
   })
   if (!res.ok) {
-    return <div>No Data To fetch</div>
+    throw new Error('Failed to Fetch Data!')
   }
 
   return res.json()
 }
 const Blog = async () => {
-  const [data, setData] = await getData()
-  const [error, setError] = useState(null)
-
-  useEffect(() => {
-    getData()
-      .then((result) => {
-        setData(result)
-      })
-      .catch((err) => {
-        setError(err.message)
-      })
-  }, [])
-
-  if (error) {
-    return <div>{error}</div>
-  }
-
-  if (!data) {
-    return <div>Loading...</div>
-  }
+  const data = await getData()
 
   return (
     <div>
