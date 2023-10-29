@@ -46,10 +46,9 @@ const Dashboard = () => {
     const { title, desc, img, content } = formData
     console.log('formData:', formData)
     if (isEditing) {
-      // Handle the edit/update logic here
       try {
         await fetch(`/api/posts/${editPostId}`, {
-          method: 'PUT', // Assuming you have an API route to update posts
+          method: 'PUT',
           body: JSON.stringify({
             title,
             desc,
@@ -71,7 +70,6 @@ const Dashboard = () => {
         console.log(error)
       }
     } else {
-      // Handle the add/new post logic here
       try {
         await fetch('/api/posts', {
           method: 'POST',
@@ -108,7 +106,6 @@ const Dashboard = () => {
   }
 
   const handleUpdate = (id: string) => {
-    // Find the post by ID in the data array
     const postToUpdate = data.find((post: Post) => post._id === id)
 
     if (postToUpdate) {
