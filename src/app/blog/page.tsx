@@ -7,7 +7,7 @@ async function getData() {
     cache: 'no-store'
   })
   if (!res.ok) {
-    throw new Error('Failed to Fetch Data!')
+    return <div>No Data To fetch</div>
   }
 
   return res.json()
