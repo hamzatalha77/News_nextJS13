@@ -30,6 +30,12 @@ const About = () => {
             porro cupiditate esse ipsum! Nulla eius maxime magnam quas dolor
             optio nesciunt?
           </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde,
+            molestiae? Deserunt saepe vero illum quaerat porro esse aut quod
+            sed, et commodi placeat accusantium molestiae sit, suscipit ducimus!
+            Perferendis, ex?
+          </p>
         </div>
         <div className="flex-1 mt-12 flex flex-col gap-8">
           <h1>What I do ?</h1>
