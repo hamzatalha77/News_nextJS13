@@ -8,7 +8,6 @@ const Users = () => {
       <div>
         <div className="overflow-x-auto">
           <table className="table">
-            {/* head */}
             <thead>
               <tr>
                 <th>
@@ -23,7 +22,6 @@ const Users = () => {
               </tr>
             </thead>
             <tbody>
-              {/* row 1 */}
               <tr>
                 <th>
                   <label>
@@ -58,7 +56,7 @@ const Users = () => {
                   <button className="btn btn-ghost btn-xs">details</button>
                 </th>
               </tr>
-              {/* row 2 */}
+
               <tr>
                 <th>
                   <label>
@@ -93,7 +91,7 @@ const Users = () => {
                   <button className="btn btn-ghost btn-xs">details</button>
                 </th>
               </tr>
-              {/* row 3 */}
+
               <tr>
                 <th>
                   <label>
@@ -164,7 +162,7 @@ const Users = () => {
                 </th>
               </tr>
             </tbody>
-            {/* foot */}
+
             <tfoot>
               <tr>
                 <th></th>
