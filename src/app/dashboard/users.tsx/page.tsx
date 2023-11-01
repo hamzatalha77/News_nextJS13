@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import React from 'react'
 
 const Users = () => {
@@ -33,7 +34,7 @@ const Users = () => {
                   <div className="flex items-center space-x-3">
                     <div className="avatar">
                       <div className="mask mask-squircle w-12 h-12">
-                        <img
+                        <Image
                           src="/tailwind-css-component-profile-2@56w.png"
                           alt="Avatar Tailwind CSS Component"
                         />
@@ -68,7 +69,7 @@ const Users = () => {
                   <div className="flex items-center space-x-3">
                     <div className="avatar">
                       <div className="mask mask-squircle w-12 h-12">
-                        <img
+                        <Image
                           src="/tailwind-css-component-profile-3@56w.png"
                           alt="Avatar Tailwind CSS Component"
                         />
@@ -103,7 +104,7 @@ const Users = () => {
                   <div className="flex items-center space-x-3">
                     <div className="avatar">
                       <div className="mask mask-squircle w-12 h-12">
-                        <img
+                        <Image
                           src="/tailwind-css-component-profile-4@56w.png"
                           alt="Avatar Tailwind CSS Component"
                         />
@@ -138,7 +139,7 @@ const Users = () => {
                   <div className="flex items-center space-x-3">
                     <div className="avatar">
                       <div className="mask mask-squircle w-12 h-12">
-                        <img
+                        <Image
                           src="/tailwind-css-component-profile-5@56w.png"
                           alt="Avatar Tailwind CSS Component"
                         />
