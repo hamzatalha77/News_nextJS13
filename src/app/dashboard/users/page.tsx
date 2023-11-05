@@ -35,6 +35,8 @@ const Users = () => {
                         <Image
                           src="/tailwind-css-component-profile-2@56w.png"
                           alt="Avatar Tailwind CSS Component"
+                          width={10}
+                          height={10}
                         />
                       </div>
                     </div>
@@ -70,6 +72,8 @@ const Users = () => {
                         <Image
                           src="/tailwind-css-component-profile-3@56w.png"
                           alt="Avatar Tailwind CSS Component"
+                          width={10}
+                          height={10}
                         />
                       </div>
                     </div>
@@ -105,6 +109,8 @@ const Users = () => {
                         <Image
                           src="/tailwind-css-component-profile-4@56w.png"
                           alt="Avatar Tailwind CSS Component"
+                          width={10}
+                          height={10}
                         />
                       </div>
                     </div>
@@ -140,6 +146,8 @@ const Users = () => {
                         <Image
                           src="/tailwind-css-component-profile-5@56w.png"
                           alt="Avatar Tailwind CSS Component"
+                          width={10}
+                          height={10}
                         />
                       </div>
                     </div>
