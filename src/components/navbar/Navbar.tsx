@@ -18,6 +18,7 @@ const Navbar = () => {
         <Link href="/blog">Blog</Link>
         <Link href="/about">About</Link>
         <Link href="/contact">Contact</Link>
+        <Link href="/profile">Profile</Link>
         <Link href="/dashboard">Dashboard</Link>
         {session.status === 'authenticated' && (
           <button
