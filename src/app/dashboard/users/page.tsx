@@ -1,6 +1,13 @@
+'use client'
 import Image from 'next/image'
 import React from 'react'
-
+import { useSession } from 'next-auth/react'
+import useSWR from 'swr'
+interface User {
+  _id: string
+  name: string
+  email: string
+}
 const Users = () => {
   return (
     <div className="overflow-hidden rounded-lg border border-gray-200 shadow-md m-5">
