@@ -3,12 +3,15 @@ import Image from 'next/image'
 import React from 'react'
 import { useSession } from 'next-auth/react'
 import useSWR from 'swr'
+import { useRouter } from 'next/router'
 interface User {
   _id: string
   name: string
   email: string
 }
 const Users = () => {
+  const session = useSession()
+  const router = useRouter()
   return (
     <div className="overflow-hidden rounded-lg border border-gray-200 shadow-md m-5">
       <table className="w-full border-collapse bg-white text-left text-sm text-gray-500">
