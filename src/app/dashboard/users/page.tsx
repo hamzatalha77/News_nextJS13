@@ -51,7 +51,10 @@ const Users = () => {
         </thead>
         <tbody className="divide-y divide-gray-100 border-t border-gray-100">
           <tr className="hover:bg-gray-50">
-            <th className="flex gap-3 px-6 py-4 font-normal text-gray-900">
+          {isLoading
+            ? 'Loading...'
+            : data?.map((user: User) => (
+            <th className="flex gap-3 px-6 py-4 font-normal text-gray-900"   key={user._id}>
               <div className="relative h-10 w-10">
                 <Image
                   className="h-full w-full rounded-full object-cover object-center"
@@ -124,8 +127,11 @@ const Users = () => {
                   </svg>
                 </a>
               </div>
+             
             </td>
+            ))}
           </tr>
+           
           <tr className="hover:bg-gray-50">
             <th className="flex gap-3 px-6 py-4 font-normal text-gray-900">
               <div className="relative h-10 w-10">
