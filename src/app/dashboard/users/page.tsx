@@ -12,6 +12,14 @@ interface User {
 const Users = () => {
   const session = useSession()
   const router = useRouter()
+  const fetcher = (...args: [RequestInfo, RequestInit?]) =>
+    fetch(...args).then((res) => res.json())
+
+  const theusername = session?.data?.user?.name
+  const { data, mutate, error, isLoading } = useSWR(
+    `/api/posts?username=${theusername}`,
+    fetcher
+  )
   return (
     <div className="overflow-hidden rounded-lg border border-gray-200 shadow-md m-5">
       <table className="w-full border-collapse bg-white text-left text-sm text-gray-500">
