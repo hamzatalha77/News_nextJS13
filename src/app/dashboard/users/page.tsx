@@ -20,6 +20,12 @@ const Users = () => {
     `/api/posts?username=${theusername}`,
     fetcher
   )
+  if (session.status === 'loading') {
+    return <p>Loading...</p>
+  }
+  if (session.status === 'unauthenticated') {
+    router?.push('/dashboard/login')
+  }
   return (
     <div className="overflow-hidden rounded-lg border border-gray-200 shadow-md m-5">
       <table className="w-full border-collapse bg-white text-left text-sm text-gray-500">
