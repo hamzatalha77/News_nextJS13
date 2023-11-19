@@ -20,6 +20,7 @@ const Users = () => {
     `/api/posts?username=${theusername}`,
     fetcher
   )
+  console.log(data)
   if (session.status === 'loading') {
     return <p>Loading...</p>
   }
