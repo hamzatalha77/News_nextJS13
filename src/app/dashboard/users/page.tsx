@@ -17,7 +17,7 @@ const Users = () => {
 
   const theusername = session?.data?.user?.name
   const { data, mutate, error, isLoading } = useSWR(
-    `/api/posts?username=${theusername}`,
+    `/api/users?username=${theusername}`,
     fetcher
   )
   console.log(data)
