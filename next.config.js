@@ -7,7 +7,8 @@ const nextConfig = {
       'media.cloudbooklet.com',
       'loremflickr.com',
       'static.wikia.nocookie.net',
-      'images.unsplash.com'
+      'images.unsplash.com',
+      'img.freepik.com'
     ]
   }
 }
