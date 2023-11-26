@@ -59,8 +59,10 @@ const page = () => {
         <div className="flex flex-col items-center pb-10">
           <Image
             className="w-24 h-24 mb-3 rounded-full shadow-lg"
-            src="/docs/images/people/profile-picture-3.jpg"
+            src="https://img.freepik.com/free-photo/bohemian-man-with-his-arms-crossed_1368-3542.jpg?w=826&t=st=1701023340~exp=1701023940~hmac=20b05f0f9e4943a28ed5dfe39a92cd6164b1c2b15828c8b649b6829c4ec35602"
             alt="Bonnie image"
+            width={10}
+            height={10}
           />
           <h5 className="mb-1 text-xl font-medium text-gray-900 dark:text-white">
             Bonnie Green
