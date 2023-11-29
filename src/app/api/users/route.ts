@@ -1,6 +1,7 @@
 import User from '@/models/User'
 import connect from '@/utils/db'
 import { NextRequest, NextResponse } from 'next/server'
+import * as parse from 'co-body'
 
 interface UpdateUserData {
   id: string
@@ -24,13 +25,8 @@ export const PUT = async (request: NextRequest) => {
   try {
     await connect()
 
-    // Check if request.body exists and is not null
-    if (!request.body) {
-      return new NextResponse('Invalid request body', { status: 400 })
-    }
-
-    // Use json method to parse request.body as JSON
-    const requestBody: UpdateUserData = await request.body.json()
+    // Use co-body to parse the JSON request body
+    const requestBody: UpdateUserData = await parse.json(request)
 
     const { id, data } = requestBody
 
