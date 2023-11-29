@@ -2,6 +2,11 @@ import User from '@/models/User'
 import connect from '@/utils/db'
 import { NextRequest, NextResponse } from 'next/server'
 
+interface UpdateUserData {
+  id: string
+  data: Record<string, any> // Adjust the type based on your user model
+}
+
 export const GET = async (request: NextRequest) => {
   const url = new URL(request.url)
   const username = url.searchParams.get('username')
@@ -19,7 +24,15 @@ export const PUT = async (request: NextRequest) => {
   try {
     await connect()
 
-    const { id, data } = await request.body.json()
+    // Check if request.body exists and is not null
+    if (!request.body) {
+      return new NextResponse('Invalid request body', { status: 400 })
+    }
+
+    // Explicitly define the type of request.body
+    const requestBody: UpdateUserData = await request.body.json()
+
+    const { id, data } = requestBody
 
     if (!id || !data) {
       return new NextResponse('Missing required parameters', { status: 400 })
