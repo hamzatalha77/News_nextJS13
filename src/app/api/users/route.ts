@@ -1,6 +1,6 @@
+import { send } from 'next/dist/next-server/server/api-utils'
 import User from '@/models/User'
 import connect from '@/utils/db'
-import { json, send } from 'next/data'
 import { NextRequest, NextResponse } from 'next/server'
 
 interface UpdateUserData {
@@ -25,8 +25,8 @@ export const PUT = async (request: NextRequest) => {
   try {
     await connect()
 
-    // Use json helper function from next/data to parse request.body
-    const requestBody: UpdateUserData = await json(request.body)
+    // Use send helper function to parse request.body as JSON
+    const requestBody: UpdateUserData = await send(request, request.body)
 
     const { id, data } = requestBody
 
