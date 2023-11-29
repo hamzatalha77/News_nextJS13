@@ -14,3 +14,4 @@ export const GET = async (request: NextRequest) => {
     return new NextResponse('Database Error!', { status: 500 })
   }
 }
+export const PUT = async (request: NextRequest) => {}
