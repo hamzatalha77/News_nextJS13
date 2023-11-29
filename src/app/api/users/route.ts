@@ -1,5 +1,6 @@
 import User from '@/models/User'
 import connect from '@/utils/db'
+import { json, send } from 'next/data'
 import { NextRequest, NextResponse } from 'next/server'
 
 interface UpdateUserData {
@@ -24,13 +25,8 @@ export const PUT = async (request: NextRequest) => {
   try {
     await connect()
 
-    // Check if request.body exists and is not null
-    if (!request.body) {
-      return new NextResponse('Invalid request body', { status: 400 })
-    }
-
-    // Explicitly define the type of request.body
-    const requestBody: UpdateUserData = await request.body.json()
+    // Use json helper function from next/data to parse request.body
+    const requestBody: UpdateUserData = await json(request.body)
 
     const { id, data } = requestBody
 
