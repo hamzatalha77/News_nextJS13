@@ -1,4 +1,3 @@
-import { send } from 'next/dist/next-server/server/api-utils'
 import User from '@/models/User'
 import connect from '@/utils/db'
 import { NextRequest, NextResponse } from 'next/server'
@@ -25,8 +24,13 @@ export const PUT = async (request: NextRequest) => {
   try {
     await connect()
 
-    // Use send helper function to parse request.body as JSON
-    const requestBody: UpdateUserData = await send(request, request.body)
+    // Check if request.body exists and is not null
+    if (!request.body) {
+      return new NextResponse('Invalid request body', { status: 400 })
+    }
+
+    // Use json method to parse request.body as JSON
+    const requestBody: UpdateUserData = await request.body.json()
 
     const { id, data } = requestBody
 
