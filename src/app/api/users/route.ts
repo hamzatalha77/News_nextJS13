@@ -5,7 +5,7 @@ import * as parse from 'co-body'
 
 interface UpdateUserData {
   id: string
-  data: Record<string, any> // Adjust the type based on your user model
+  data: Record<string, any> 
 }
 
 export const GET = async (request: NextRequest) => {
