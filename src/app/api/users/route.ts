@@ -1,11 +1,10 @@
 import User from '@/models/User'
 import connect from '@/utils/db'
 import { NextRequest, NextResponse } from 'next/server'
-import * as parse from 'co-body'
 
 interface UpdateUserData {
   id: string
-  data: Record<string, any> 
+  data: Record<string, any>
 }
 
 export const GET = async (request: NextRequest) => {
