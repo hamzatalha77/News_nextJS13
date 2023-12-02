@@ -24,7 +24,7 @@ export const PUT = async (request: NextRequest) => {
   try {
     await connect()
 
-    // Use co-body to parse the JSON request body
+
     const requestBody: UpdateUserData = await parse.json(request)
 
     const { id, data } = requestBody
