@@ -1,6 +1,6 @@
 import User from '@/models/User'
 import connect from '@/utils/db'
-import { NextRequest, NextResponse, parse } from 'next/server'
+import { NextRequest, NextResponse } from 'next/server'
 
 interface UpdateUserData {
   id: string
@@ -24,7 +24,11 @@ export const PUT = async (request: NextRequest) => {
   try {
     await connect()
 
-    const requestBody: UpdateUserData = await parse.json(request)
+    // Read the request body as text
+    const bodyText = await request.text()
+
+    // Parse the JSON from the request body
+    const requestBody: UpdateUserData = JSON.parse(bodyText)
 
     const { id, data } = requestBody
 
