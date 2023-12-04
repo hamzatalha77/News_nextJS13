@@ -23,32 +23,18 @@ export const GET = async (request: NextRequest) => {
 export const PUT = async (request: NextRequest) => {
   try {
     await connect()
-
-    // Read the request body as text
     const bodyText = await request.text()
-
-    // Parse the JSON from the request body
     const requestBody: UpdateUserData = JSON.parse(bodyText)
-
     const { id, data } = requestBody
-
     if (!id || !data) {
       return new NextResponse('Missing required parameters', { status: 400 })
     }
-
-    // Find the user by id
     const user = await User.findById(id)
-
     if (!user) {
       return new NextResponse('User not found', { status: 404 })
     }
-
-    // Update user data
     Object.assign(user, data)
-
-    // Save the updated user
     await user.save()
-
     return new NextResponse(JSON.stringify(user), { status: 200 })
   } catch (err) {
     console.error(err)
