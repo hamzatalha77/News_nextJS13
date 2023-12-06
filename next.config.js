@@ -8,7 +8,8 @@ const nextConfig = {
       'loremflickr.com',
       'static.wikia.nocookie.net',
       'images.unsplash.com',
-      'img.freepik.com'
+      'img.freepik.com',
+      'upload.wikimedia.org'
     ]
   }
 }
