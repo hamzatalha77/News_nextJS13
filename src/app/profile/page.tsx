@@ -3,7 +3,7 @@ import React from 'react'
 
 const page = () => {
   return (
-    <div>
+    <div className="relative">
       <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
         <div className="flex justify-end px-4 pt-4">
           <button
@@ -13,15 +13,6 @@ const page = () => {
             type="button"
           >
             <span className="sr-only">Open dropdown</span>
-            <svg
-              className="w-5 h-5"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="currentColor"
-              viewBox="0 0 16 3"
-            >
-              <path d="M2 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Zm6.041 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM14 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Z" />
-            </svg>
           </button>
 
           <div
@@ -52,7 +43,7 @@ const page = () => {
         <div className="flex flex-col items-center pb-10">
           <Image
             className="w-24 h-24 mb-3 rounded-full shadow-lg"
-            src="https://img.freepik.com/free-photo/bohemian-man-with-his-arms-crossed_1368-3542.jpg?w=826&t=st=1701023340~exp=1701023940~hmac=20b05f0f9e4943a28ed5dfe39a92cd6164b1c2b15828c8b649b6829c4ec35602"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/User-avatar.svg/120px-User-avatar.svg.png?20201213175635"
             alt="Bonnie image"
             width={100}
             height={100}
