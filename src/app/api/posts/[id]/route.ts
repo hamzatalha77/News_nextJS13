@@ -32,6 +32,7 @@ export const PUT = async (request: NextRequest, { params, body }: any) => {
 
     return new NextResponse('Post has been updated', { status: 200 })
   } catch (err) {
+    console.error('Error in PUT request:', err)
     return new NextResponse('Database Error!', { status: 500 })
   }
 }
