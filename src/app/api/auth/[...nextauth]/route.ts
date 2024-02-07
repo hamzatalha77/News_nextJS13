@@ -6,13 +6,16 @@ import User from '@/models/User'
 import connect from '@/utils/db'
 import bcrypt from 'bcryptjs'
 
-const handler = NextAuth({
+export const authOptions: any = {
   providers: [
     CredentialsProvider({
       id: 'credentials',
       name: 'Credentials',
-      async authorize(credentials) {
-        //Check if the user exists.
+      credentials: {
+        email: { label: 'Email', type: 'text' },
+        password: { label: 'Password', type: 'password' }
+      },
+      async authorize(credentials: any): Promise<any | null> {
         await connect()
 
         try {
@@ -34,23 +37,23 @@ const handler = NextAuth({
           } else {
             throw new Error('User not found!')
           }
-        } catch (err) {
+        } catch (err: any) {
           throw new Error(err)
         }
       }
     }),
     GithubProvider({
-      clientId: process.env.GITHUB_ID,
-      clientSecret: process.env.GITHUB_SECRET
+      clientId: process.env.GITHUB_ID ?? '',
+      clientSecret: process.env.GITHUB_SECRET ?? ''
     }),
     GoogleProvider({
-      clientId: process.env.GOOGLE_CLIENT_ID,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET
+      clientId: process.env.GOOGLE_CLIENT_ID ?? '',
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET ?? ''
     })
   ],
   pages: {
     error: '/dashboard/login'
   }
-})
-
+}
+export const handler = NextAuth(authOptions)
 export { handler as GET, handler as POST }
