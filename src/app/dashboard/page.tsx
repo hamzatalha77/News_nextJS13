@@ -135,7 +135,7 @@ const Dashboard = () => {
                     <Image
                       className="object-cover"
                       src={post.img}
-                      alt=""
+                      alt="postImg"
                       width={200}
                       height={200}
                     />

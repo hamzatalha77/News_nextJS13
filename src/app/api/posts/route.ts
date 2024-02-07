@@ -1,6 +1,7 @@
 import Post from '@/models/Post'
 import connect from '@/utils/db'
 import { NextRequest, NextResponse } from 'next/server'
+import slugify from 'slugify'
 
 export const GET = async (request: NextRequest) => {
   const url = new URL(request.url)
@@ -17,12 +18,21 @@ export const GET = async (request: NextRequest) => {
 export const POST = async (request: NextRequest) => {
   const body = await request.json()
 
-  const newPost = new Post(body)
+  const slug = slugify(body.title, { lower: true })
+
+  const newPost = new Post({
+    ...body,
+    slug // Add the generated slug to the post object
+  })
 
   try {
     await connect()
     await newPost.save()
-    return new NextResponse('Post has been Created!!', { status: 201 })
+
+    return NextResponse.json(
+      { message: 'Post created successfully', newPost },
+      { status: 201 }
+    )
   } catch (error) {
     return new NextResponse('Database Error', { status: 500 })
   }
