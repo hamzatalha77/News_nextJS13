@@ -9,7 +9,9 @@ const nextConfig = {
       'static.wikia.nocookie.net',
       'images.unsplash.com',
       'img.freepik.com',
-      'upload.wikimedia.org'
+      'upload.wikimedia.org',
+      'static.vecteezy.com',
+      'cdni.iconscout.com'
     ]
   }
 }

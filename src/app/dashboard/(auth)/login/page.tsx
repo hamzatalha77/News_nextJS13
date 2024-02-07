@@ -1,6 +1,7 @@
 'use client'
 import { signIn, useSession } from 'next-auth/react'
 import Image from 'next/image'
+import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import React, { useState } from 'react'
 const Login = () => {
@@ -72,6 +73,12 @@ const Login = () => {
               </div>
 
               <div className="mb-6 flex items-center justify-between">
+                <Link
+                  href="/dashboard/register"
+                  className="text-primary transition duration-150 ease-in-out hover:text-primary-600 focus:text-primary-600 active:text-primary-700 dark:text-primary-400 dark:hover:text-primary-500 dark:focus:text-primary-500 dark:active:text-primary-600"
+                >
+                  Don&apos;t have an account? Sign Up
+                </Link>
                 <a
                   href="#!"
                   className="text-primary transition duration-150 ease-in-out hover:text-primary-600 focus:text-primary-600 active:text-primary-700 dark:text-primary-400 dark:hover:text-primary-500 dark:focus:text-primary-500 dark:active:text-primary-600"
@@ -88,7 +95,9 @@ const Login = () => {
               >
                 Sign in
               </button>
-
+              {/* <div className="mb-6 flex items-center justify-between">
+               
+              </div> */}
               <div className="my-4 flex items-center before:mt-0.5 before:flex-1 before:border-t before:border-neutral-300 after:mt-0.5 after:flex-1 after:border-t after:border-neutral-300">
                 <p className="mx-4 mb-0 text-center font-semibold dark:text-neutral-200">
                   OR
@@ -117,9 +126,9 @@ const Login = () => {
                 </svg>
                 Continue with Google
               </button>
-              <a
+              <button
                 className="mb-3 flex w-full items-center justify-center rounded bg-info px-7 pb-2.5 pt-3 text-center text-sm font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#54b4d3] transition duration-150 ease-in-out hover:bg-info-600 hover:shadow-[0_8px_9px_-4px_rgba(84,180,211,0.3),0_4px_18px_0_rgba(84,180,211,0.2)] focus:bg-info-600 focus:shadow-[0_8px_9px_-4px_rgba(84,180,211,0.3),0_4px_18px_0_rgba(84,180,211,0.2)] focus:outline-none focus:ring-0 active:bg-info-700 active:shadow-[0_8px_9px_-4px_rgba(84,180,211,0.3),0_4px_18px_0_rgba(84,180,211,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(84,180,211,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(84,180,211,0.2),0_4px_18px_0_rgba(84,180,211,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(84,180,211,0.2),0_4px_18px_0_rgba(84,180,211,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(84,180,211,0.2),0_4px_18px_0_rgba(84,180,211,0.1)]"
-                href="#!"
+                onClick={() => signIn('Github')}
                 role="button"
                 data-te-ripple-init
                 data-te-ripple-color="light"
@@ -138,7 +147,7 @@ const Login = () => {
                   />
                 </svg>
                 Continue with Github
-              </a>
+              </button>
             </form>
           </div>
         </div>
