@@ -19,46 +19,40 @@ export const PUT = async (request: NextRequest, { params }: any) => {
   const updatedData = await request.json()
 
   try {
-    const currentPost = await Post.findOne({ _id: new ObjectId(id) })
+    const currentPost = await Post.findById(id)
 
     if (!currentPost) {
       return new NextResponse('Post not found', { status: 404 })
     }
 
-    const updateObject: { $set: { [key: string]: any } } = {
-      $set: {
-        updatedAt: new Date()
-      }
+    const updateObject: { [key: string]: any } = {
+      updatedAt: new Date()
     }
 
+    // Update fields in updateObject
     for (const key in updatedData) {
       if (updatedData.hasOwnProperty(key)) {
-        updateObject.$set[key] = updatedData[key]
+        updateObject[key] = updatedData[key]
       }
     }
 
-    const updatedPost = await Post.findOneAndUpdate(
-      { _id: new ObjectId(id) },
-      updateObject,
-      { returnDocument: 'after' }
-    )
-
-    if (!updatedPost.value) {
-      return new NextResponse('Post not found', { status: 404 })
+    // Check if title is updated and update the slug
+    if (updatedData.title && updatedData.title !== currentPost.title) {
+      const newSlug = slugify(updatedData.title, { lower: true })
+      updateObject.slug = newSlug
     }
 
-    if (updatedData.title && updatedData.title !== currentPost.title) {
-      const newSlug = slugify(updatedData.title)
-      await Post.updateOne(
-        { _id: new ObjectId(id) },
-        { $set: { slug: newSlug } }
-      )
-      updatedPost.value.slug = newSlug
+    const updatedPost = await Post.findByIdAndUpdate(id, updateObject, {
+      new: true
+    })
+
+    if (!updatedPost) {
+      return new NextResponse('Post not found', { status: 404 })
     }
 
     const response = {
       message: 'Post has been updated',
-      post: updatedPost.value
+      post: updatedPost
     }
 
     return new NextResponse(JSON.stringify(response), { status: 200 })

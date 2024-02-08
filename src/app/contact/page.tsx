@@ -18,7 +18,10 @@ const Contact = () => {
             className={styles.image}
             src="/contactme.png"
             alt="contact us"
-            fill={true}
+            width={500} // Set the width of the image
+            height={300} // Set the height of the image
+            priority
+            sizes="(max-width: 600px) 100vw, (max-width: 1024px) 50vw, 800px" // Set the sizes attribute
           />
         </div>
         <form className="flex-1 flex flex-col gap-5">
