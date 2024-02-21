@@ -29,14 +29,12 @@ export const PUT = async (request: NextRequest, { params }: any) => {
       updatedAt: new Date()
     }
 
-    // Update fields in updateObject
     for (const key in updatedData) {
       if (updatedData.hasOwnProperty(key)) {
         updateObject[key] = updatedData[key]
       }
     }
 
-    // Check if title is updated and update the slug
     if (updatedData.title && updatedData.title !== currentPost.title) {
       const newSlug = slugify(updatedData.title, { lower: true })
       updateObject.slug = newSlug

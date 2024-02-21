@@ -22,7 +22,7 @@ export const POST = async (request: NextRequest) => {
 
   const newPost = new Post({
     ...body,
-    slug // Add the generated slug to the post object
+    slug
   })
 
   try {

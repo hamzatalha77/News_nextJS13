@@ -20,13 +20,20 @@ const Navbar = () => {
         <Link href="/contact">Contact</Link>
         <Link href="/profile">Profile</Link>
         <Link href="/dashboard">Dashboard</Link>
-        {session.status === 'authenticated' && (
+        {session.status === 'authenticated' ? (
           <button
             className="p-1 bg-[#66FCF1] border-none rounded-[3px] text-white cursor-pointer"
             onClick={() => signOut()}
           >
             Logout
           </button>
+        ) : (
+          <Link
+            className="p-1 bg-[#66FCF1] border-none rounded-[3px] text-white cursor-pointer"
+            href="/dashboard/login"
+          >
+            Login
+          </Link>
         )}
       </div>
     </div>
