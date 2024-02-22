@@ -3,7 +3,7 @@ import Link from 'next/link'
 import React from 'react'
 
 async function getData() {
-  const res = await fetch('http://localhost:3000/api/posts', {
+  const res = await fetch('https://penta-news.vercel.app/api/posts', {
     cache: 'no-store'
   })
   if (!res.ok) {
