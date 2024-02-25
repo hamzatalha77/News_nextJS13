@@ -17,7 +17,7 @@ const Users = () => {
 
   const theusername = session?.data?.user?.name
   const { data, mutate, error, isLoading } = useSWR(
-    `/api/users?username=${theusername}`,
+    `https://penta-news.vercel.app/api/users?username=${theusername}`,
     fetcher
   )
 

@@ -11,7 +11,8 @@ const nextConfig = {
       'img.freepik.com',
       'upload.wikimedia.org',
       'static.vecteezy.com',
-      'cdni.iconscout.com'
+      'cdni.iconscout.com',
+      'www.xmpow.com'
     ]
   }
 }
