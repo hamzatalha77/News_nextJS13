@@ -20,7 +20,8 @@ const Contact = () => {
             alt="contact us"
             width={500}
             height={300}
-            priority
+            priority={true}
+            style={{ width: 'auto', height: 'auto' }}
             sizes="(max-width: 600px) 100vw, (max-width: 1024px) 50vw, 800px"
           />
         </div>

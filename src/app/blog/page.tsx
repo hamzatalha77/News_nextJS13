@@ -23,6 +23,7 @@ const Blog = async () => {
             <Image
               src={item.img}
               alt="blog"
+              style={{ width: 'auto', height: 'auto' }}
               width={400}
               height={250}
               priority={true}

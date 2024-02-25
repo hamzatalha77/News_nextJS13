@@ -59,3 +59,25 @@ export const PUT = async (request: NextRequest, { params }: any) => {
     return new NextResponse('Database Error!', { status: 500 })
   }
 }
+export const DELETE = async (request: NextRequest, { params }: any) => {
+  const { id } = params
+
+  try {
+    await connect()
+    const deletedPost = await Post.findByIdAndDelete(id)
+
+    if (!deletedPost) {
+      return new NextResponse('Post not found', { status: 404 })
+    }
+
+    const response = {
+      message: 'Post has been deleted',
+      post: deletedPost
+    }
+
+    return new NextResponse(JSON.stringify(response), { status: 200 })
+  } catch (err) {
+    console.error('Error in DELETE request:', err)
+    return new NextResponse('Database Error!', { status: 500 })
+  }
+}

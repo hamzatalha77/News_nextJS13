@@ -53,9 +53,9 @@ const Category: React.FC<CategoryProps> = ({ params }) => {
                 alt="desktop"
                 width={500}
                 height={500}
-                priority
-                layout="responsive"
+                priority={true}
                 className="object-cover"
+                style={{ width: 'auto', height: 'auto' }}
               />
             </div>
           </div>

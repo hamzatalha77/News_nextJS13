@@ -14,7 +14,7 @@ const Register = () => {
     e.preventDefault()
 
     try {
-      const res = await fetch('https://penta-news.vercel.app/api/auth/register', {
+      const res = await fetch('/api/auth/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

@@ -21,7 +21,7 @@ const Dashboard = () => {
 
   const theusername = session?.data?.user?.name
   const { data, mutate, error, isLoading } = useSWR(
-    `https://penta-news.vercel.app/api/posts?username=${theusername}`,
+    `/api/posts?username=${theusername}`,
     fetcher
   )
 
@@ -47,7 +47,7 @@ const Dashboard = () => {
     console.log('formData:', formData)
     if (isEditing) {
       try {
-        await fetch(`https://penta-news.vercel.app/api/posts/${editPostId}`, {
+        await fetch(`/api/posts/${editPostId}`, {
           method: 'PUT',
           body: JSON.stringify({
             title,
@@ -71,7 +71,7 @@ const Dashboard = () => {
       }
     } else {
       try {
-        await fetch('https://penta-news.vercel.app/api/posts', {
+        await fetch('/api/posts', {
           method: 'POST',
           body: JSON.stringify({
             title,
@@ -96,7 +96,7 @@ const Dashboard = () => {
 
   const handleDelete = async (id: any) => {
     try {
-      await fetch(`https://penta-news.vercel.app/api/posts/${id}`, {
+      await fetch(`/api/posts/${id}`, {
         method: 'DELETE'
       })
       mutate()
@@ -133,11 +133,13 @@ const Dashboard = () => {
                 >
                   <div className="w-52 h-28 ">
                     <Image
-                      className="object-cover"
+                      className="h-full w-full object-cover object-center"
                       src={post.img}
                       alt="postImg"
                       width={200}
                       height={200}
+                      style={{ width: 'auto', height: 'auto' }}
+                      priority={true}
                     />
                   </div>
                   <h2>{post.title}</h2>

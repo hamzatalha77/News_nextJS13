@@ -42,7 +42,13 @@ const BlogPost = async ({ params }: any) => {
           </div>
         </div>
         <div className="flex-1 h-72 relative">
-          <Image className="object-cover" src={data.img} fill={true} alt="" />
+          <Image
+            className="object-cover"
+            src={data.img}
+            fill={true}
+            alt=""
+            sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 400px" // Example sizes, adjust according to your layout
+          />
         </div>
       </div>
       <div className="mt-12 text-xl font-light text-[#999] text-justify">
