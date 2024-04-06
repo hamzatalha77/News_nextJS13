@@ -3,8 +3,8 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Fjalla_One } from 'next/font/google'
 import Footer from '@/components/footer/Footer'
-import { ThemeProvider } from '@/context/ThemeContext'
 import AuthProvider from '@/components/AuthProvider/AuthProvider'
+import { ThemeProvider } from '@/context/ThemeContext'
 const fjalla_One = Fjalla_One({
   weight: ['400'],
   style: ['normal'],

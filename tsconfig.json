@@ -27,8 +27,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/context/ThemeContext.js",
-    "src/app/api/auth/[...nextauth]/route.js",
+    "src/context/ThemeContext.tsx",
+    "src/app/api/auth/[...nextauth]/route.ts",
     "src/app/dashboard/users"
   ],
   "exclude": ["node_modules"]

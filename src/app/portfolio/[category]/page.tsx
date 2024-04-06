@@ -50,9 +50,12 @@ const Category: React.FC<CategoryProps> = ({ params }) => {
             <div className="flex-1 h-[500px] relative">
               <Image
                 src={item.image}
-                fill={true}
                 alt="desktop"
+                width={500}
+                height={500}
+                priority={true}
                 className="object-cover"
+                style={{ width: 'auto', height: 'auto' }}
               />
             </div>
           </div>

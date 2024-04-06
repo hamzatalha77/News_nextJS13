@@ -133,11 +133,13 @@ const Dashboard = () => {
                 >
                   <div className="w-52 h-28 ">
                     <Image
-                      className="object-cover"
+                      className="h-full w-full object-cover object-center"
                       src={post.img}
-                      alt=""
+                      alt="postImg"
                       width={200}
                       height={200}
+                      style={{ width: 'auto', height: 'auto' }}
+                      priority={true}
                     />
                   </div>
                   <h2>{post.title}</h2>
