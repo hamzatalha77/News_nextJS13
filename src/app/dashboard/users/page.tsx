@@ -43,7 +43,7 @@ const Users = () => {
                 duration
               </th>
               <th scope="col" className="px-6 py-4 font-medium text-gray-900">
-                Role
+                description
               </th>
               <th scope="col" className="px-6 py-4 font-medium text-gray-900">
                 Team
