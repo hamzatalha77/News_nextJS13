@@ -37,10 +37,10 @@ const Users = () => {
           <thead className="bg-gray-50">
             <tr>
               <th scope="col" className="px-6 py-4 font-medium text-gray-900">
-                Name
+                Name exercise
               </th>
               <th scope="col" className="px-6 py-4 font-medium text-gray-900">
-                State
+                duration
               </th>
               <th scope="col" className="px-6 py-4 font-medium text-gray-900">
                 Role
