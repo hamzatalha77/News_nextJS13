@@ -46,7 +46,7 @@ const Users = () => {
                 description
               </th>
               <th scope="col" className="px-6 py-4 font-medium text-gray-900">
-                Team
+                repitition
               </th>
               <th
                 scope="col"
