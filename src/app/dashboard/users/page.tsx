@@ -88,7 +88,7 @@ const Users = () => {
                       Active
                     </span>
                   </td>
-                  <td className="px-6 py-4">Product Designer</td>
+                  <td className="px-6 py-4">User Infos</td>
                   <td className="px-6 py-4">
                     <div className="flex gap-2">
                       <span className="inline-flex items-center gap-1 rounded-full bg-blue-50 px-2 py-1 text-xs font-semibold text-blue-600">
